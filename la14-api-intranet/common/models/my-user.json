@@ -1,0 +1,144 @@
+{
+  "name": "MyUser",
+  "plural": "users",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "mysql": {
+      "table": "User"
+    }
+  },
+  "replaceOnPUT": false,
+  "mixins": {},
+  "properties": {
+    "email": {
+      "type": "string"
+    },
+    "password": {
+      "type": "string"
+    },
+    "birthDate": {
+      "type": "date"
+    },
+    "firstName": {
+      "type": "string",
+      "required": true,
+      "length": 100
+    },
+    "lastName": {
+      "type": "string",
+      "required": true,
+      "length": 100
+    },
+    "idNumber": {
+      "type": "number",
+      "length": 10
+    },
+    "address": {
+      "type": "string",
+      "required": true,
+      "length": 100
+    },
+    "phone": {
+      "type": "string",
+      "required": true,
+      "length": 15
+    },
+    "image": {
+      "type": "string",
+      "length": 255
+    },
+    "keywork": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "notices": {
+      "type": "hasMany",
+      "model": "Notice",
+      "foreignKey": "userId"
+    },
+    "events": {
+      "type": "hasMany",
+      "model": "Event",
+      "foreignKey": "userId"
+    },
+    "documents": {
+      "type": "hasMany",
+      "model": "Document",
+      "foreignKey": "userId"
+    },
+    "classifieds": {
+      "type": "hasMany",
+      "model": "Classified",
+      "foreignKey": "userId"
+    },
+    "userType": {
+      "type": "belongsTo",
+      "model": "UserType",
+      "foreignKey": "typeId"
+    },
+    "notes": {
+      "type": "hasMany",
+      "model": "Note",
+      "foreignKey": "userId"
+    },
+    "userRequest": {
+      "type": "hasMany",
+      "model": "Request",
+      "foreignKey": "userId"
+    },
+    "responsableRequest": {
+      "type": "hasMany",
+      "model": "Request",
+      "foreignKey": "responsableId"
+    },
+    "links": {
+      "type": "hasMany",
+      "model": "Link",
+      "foreignKey": "userId"
+    },
+    "galeries": {
+      "type": "hasMany",
+      "model": "Galery",
+      "foreignKey": "userId"
+    },
+    "comments": {
+      "type": "hasMany",
+      "model": "Comment",
+      "foreignKey": "userId"
+    },
+    "suggestions": {
+      "type": "hasMany",
+      "model": "Suggestion",
+      "foreignKey": "userId"
+    },
+    "surveys": {
+      "type": "hasMany",
+      "model": "Survey",
+      "foreignKey": "userId"
+    },
+    "userDocumentType": {
+      "type": "belongsTo",
+      "model": "UserDocumentType",
+      "foreignKey": "typeId"
+    },
+    "workCertificates": {
+      "type": "hasMany",
+      "model": "WorkCertificate",
+      "foreignKey": "userId"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "getUserByToken"
+    }
+  ],
+  "methods": {}
+}

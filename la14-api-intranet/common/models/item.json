@@ -1,0 +1,37 @@
+{
+  "name": "Item",
+  "plural": "items",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "TimeStamp": {
+      "required": false,
+      "validateUpsert": true,
+      "silenceWarnings": true
+    }
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "length": 40
+    },
+    "description": {
+      "type": "string",
+      "dataType": "text"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "galery": {
+      "type": "belongsTo",
+      "model": "Galery",
+      "foreignKey": "galeryId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

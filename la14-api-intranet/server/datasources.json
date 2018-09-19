@@ -1,0 +1,17 @@
+{
+  "db": {
+    "host": "69.164.192.224",
+    "port": 3306,
+    "database": "la14_intranet",
+    "password": "119ak7VaG70l7ec",
+    "name": "db",
+    "connector": "mysql",
+    "user": "root"
+  },
+  "storage": {
+    "name": "storage",
+    "connector": "loopback-component-storage",
+    "provider": "filesystem",
+    "root": "./files"
+  }
+}

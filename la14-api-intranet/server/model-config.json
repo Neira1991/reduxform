@@ -1,0 +1,138 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../node_modules/loopback-ds-timestamp-mixin",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "db",
+    "public": false
+  },
+  "MyUser": {
+    "dataSource": "db",
+    "public": true,
+    "acls": [
+      {
+        "principalType": "ROLE",
+        "principalId": "$everyone",
+        "permission": "ALLOW",
+        "property": "consultarIndicadores"
+      },
+      {
+        "principalType": "ROLE",
+        "principalId": "$everyone",
+        "permission": "ALLOW",
+        "property": "users/login "
+      }
+    ]
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Note": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Survey": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Content": {
+    "dataSource": "db",
+    "public": true
+  },
+  "RequestType": {
+    "dataSource": "db",
+    "public": true
+  },
+  "EventType": {
+    "dataSource": "db",
+    "public": true
+  },
+  "DocumentCategory": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Notice": {
+    "dataSource": "db",
+    "public": true
+  },
+  "UserType": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Classified": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Comment": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Document": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Event": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Galery": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Item": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Link": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Request": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Suggestion": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Attachment": {
+    "dataSource": "storage",
+    "public": true
+  },
+  "UserDocumentType": {
+    "dataSource": "db",
+    "public": true
+  },
+  "WorkCertificate": {
+    "dataSource": "db",
+    "public": true
+  }
+}

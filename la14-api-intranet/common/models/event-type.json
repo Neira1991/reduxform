@@ -1,0 +1,27 @@
+{
+  "name": "EventType",
+  "plural": "event-types",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "value": {
+      "type": "string"
+    },
+    "code": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "type": {
+      "type": "hasMany",
+      "model": "Event",
+      "foreignKey": "eventTypeId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

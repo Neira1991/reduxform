@@ -1,0 +1,44 @@
+{
+  "name": "Event",
+  "plural": "events",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "TimeStamp": {
+      "required": false,
+      "validateUpsert": true,
+      "silenceWarnings": true
+    }
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "length": 100
+    },
+    "on": {
+      "type": "date"
+    },
+    "keywork": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "MyUser",
+      "foreignKey": "userId"
+    },
+    "type": {
+      "type": "belongsTo",
+      "model": "EventType",
+      "foreignKey": "eventTypeId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

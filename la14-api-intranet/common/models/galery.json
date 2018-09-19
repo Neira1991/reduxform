@@ -1,0 +1,38 @@
+{
+  "name": "Galery",
+  "plural": "galeries",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "TimeStamp": {
+      "required": false,
+      "validateUpsert": true,
+      "silenceWarnings": true
+    }
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "length": 40
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "MyUser",
+      "foreignKey": "userId"
+    },
+    "galery": {
+      "type": "hasMany",
+      "model": "Item",
+      "foreignKey": "galeryId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

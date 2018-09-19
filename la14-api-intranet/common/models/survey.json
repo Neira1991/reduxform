@@ -1,0 +1,30 @@
+{
+  "name": "Survey",
+  "plural": "surveys",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "link": {
+      "type": "string"
+    },
+    "active": {
+      "type": "boolean"
+    },
+    "keywork": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "MyUser",
+      "foreignKey": "userId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

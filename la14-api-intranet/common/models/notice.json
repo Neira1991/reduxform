@@ -1,0 +1,48 @@
+{
+  "name": "Notice",
+  "plural": "notices",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "TimeStamp": {
+      "required": false,
+      "validateUpsert": true,
+      "silenceWarnings": true
+    }
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "length": 100
+    },
+    "content": {
+      "type": "string",
+      "dataType": "text"
+    },
+    "image": {
+      "type": "string"
+    },
+    "keywork": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "MyUser",
+      "foreignKey": "userId"
+    },
+    "notice": {
+      "type": "hasMany",
+      "model": "Comment",
+      "foreignKey": "noticeId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

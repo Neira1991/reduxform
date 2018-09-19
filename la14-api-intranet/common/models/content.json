@@ -1,0 +1,28 @@
+{
+  "name": "Content",
+  "plural": "contents",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "content": {
+      "type": "string",
+      "dataType": "text"
+    },
+    "image": {
+      "type": "string"
+    },
+    "video": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
